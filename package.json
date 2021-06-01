@@ -1,0 +1,75 @@
+{
+  "name": "temp-lb4-qb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist coverage .nyc_output",
+    "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
+    "eslint": "eslint \"src/**/*.ts\"",
+    "eslint:fix": "npm run eslint -- --fix",
+    "lint": "npm run prettier && npm run eslint",
+    "lint:fix": "npm run prettier:fix && npm run eslint:fix",
+    "postbuild": "rimraf dist/__tests__",
+    "posttest": "npm run lint",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "prettier": "prettier \"src/**/*.ts\" -c",
+    "prettier:fix": "prettier \"src/**/*.ts\" -w",
+    "test": "nyc ts-mocha src/__tests__/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sf-kansara/temp-lb4-qb.git"
+  },
+  "author": "Sourcefuse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sf-kansara/temp-lb4-qb/issues"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "homepage": "https://github.com/sf-kansara/temp-lb4-qb#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@loopback/build": "^6.4.0",
+    "@loopback/eslint-config": "^10.2.0",
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^15.6.1",
+    "chai": "^4.3.4",
+    "commitizen": "^4.2.1",
+    "coveralls": "^3.1.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^7.27.0",
+    "husky": "^4.3.0",
+    "mocha": "^8.4.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "keywords": [
+    "loopback",
+    "lb4",
+    "query",
+    "query builder"
+  ]
+}
