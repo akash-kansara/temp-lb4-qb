@@ -45,6 +45,7 @@ module.exports = {
   scopes: [
     {name: 'ci-cd'},
     {name: 'core'},
+    {name: 'docs'},
   ],
 
   appendBranchNameToCommitMessage: false,
