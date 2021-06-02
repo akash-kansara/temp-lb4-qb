@@ -15,8 +15,7 @@ Fixes # (issue)
 
 Please describe the tests that you ran to verify your changes. List any relevant details for your test configuration if any.
 
-- [ ] Test A
-- [ ] Test B
+- [ ] Unit Tests
 
 ## Checklist:
 
