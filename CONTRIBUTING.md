@@ -4,6 +4,7 @@
 1. Read the [Code of Conduct](https://github.com/sf-kansara/temp-lb4-qb/blob/master/CODE_OF_CONDUCT.md)
 2. Check out [existing issues](https://github.com/sf-kansara/temp-lb4-qb/issues)
 3. If an issue doesn't exist for the change you want to make then [create one](https://github.com/sf-kansara/temp-lb4-qb/issues/new/choose)
+4. Make sure changes you make are covered by existing / new unit tests
 
 ## Pull Requests
 1. Fork this repo
