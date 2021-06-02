@@ -8,7 +8,7 @@
 ## Pull Requests
 1. Take latest pull of `master` branch
 2. Create new branch with issue # and switch to it [e.g. `git chekcout -b 11`]
-3. Keep doing interim commits on this new branch to add your changes
+3. Keep doing interim commits on this new branch to add your changes with `git commit` command for semantic commits
 4. Once you're done, rebase your branch with `master` [e.g. `git fetch && git rebase origin/master`]
 5. Push rebased code `git push --force-with-lease origin 11`
 6. Create PR
