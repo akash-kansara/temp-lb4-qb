@@ -248,9 +248,7 @@ describe('misc', () => {
       department: 'faculty',
     };
     const wb = new WhereBuilder<User>();
-    wb.eq('friends', 1);
-    wb.eq('friends', 2);
-    wb.clear();
+    wb.eq('friends', 1).eq('friends', 2).clear();
     wb.eq('department', 'faculty');
     const result = wb.build();
     expect(result).to.eql(expected);
@@ -284,8 +282,7 @@ describe('misc', () => {
     wb.clear();
     wb.impose({name: {like: 'John'}})
       .gte('dob', dob)
-      .and([{department: {neq: 'student'}, tag: {inq: ['tag1']}}])
-      .build();
+      .and([{department: {neq: 'student'}, tag: {inq: ['tag1']}}]);
     wb.clear();
     const result = wb
       .impose({dob: {lt: dob}})

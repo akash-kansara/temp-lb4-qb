@@ -1,4 +1,4 @@
-import {Where} from '../types';
+import {Filter, Where} from '../types';
 
 export class WhereStore<M extends object> {
   store: Where<M>;
@@ -15,6 +15,22 @@ export class WhereStore<M extends object> {
       }
     }
     this.store = Object.assign(this.store, w);
+  }
+
+  clear() {
+    this.store = {};
+  }
+}
+
+export class FilterStore<M extends object> {
+  store: Filter<M>;
+
+  constructor(f?: Filter<M>) {
+    this.store = f ?? {};
+  }
+
+  add(f: Filter<M>) {
+    this.store = Object.assign(this.store, f);
   }
 
   clear() {
