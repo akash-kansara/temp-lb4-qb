@@ -1,4 +1,11 @@
 import {FilterBuilder, WhereBuilder} from './query';
-import {AnyObject, Filter, Where} from './types';
+import {AnyObject, FilterExcludingWhere, Filter, Where} from './types';
 
-export {AnyObject, FilterBuilder, Filter, WhereBuilder, Where};
+export {
+  AnyObject,
+  FilterBuilder,
+  FilterExcludingWhere,
+  Filter,
+  WhereBuilder,
+  Where,
+};

@@ -16,3 +16,5 @@ export type Filter<M extends object> = {
   skip?: number;
   include?: Inclusion[];
 };
+
+export type FilterExcludingWhere<M extends object> = Omit<Filter<M>, 'where'>;
