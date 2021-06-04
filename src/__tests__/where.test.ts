@@ -255,4 +255,43 @@ describe('misc', () => {
     const result = wb.build();
     expect(result).to.eql(expected);
   });
+  it('builds complex where - 1', () => {
+    const dob = new Date();
+    const expected: Where<User> = {
+      name: {like: 'John'},
+      dob: {gte: dob},
+      and: [{department: {neq: 'student'}, tag: {inq: ['tag1']}}],
+    };
+    const wb = new WhereBuilder<User>();
+    wb.gt('friends', 1);
+    wb.clear();
+    const result = wb
+      .impose({name: {like: 'John'}})
+      .gte('dob', dob)
+      .and([{department: {neq: 'student'}, tag: {inq: ['tag1']}}])
+      .build();
+    expect(result).to.eql(expected);
+  });
+  it('builds complex where - 2', () => {
+    const dob = new Date();
+    const expected: Where<User> = {
+      name: {regexp: /davis/i},
+      dob: {lt: dob},
+      photoUrl: {exists: true},
+    };
+    const wb = new WhereBuilder<User>();
+    wb.gt('friends', 1);
+    wb.clear();
+    wb.impose({name: {like: 'John'}})
+      .gte('dob', dob)
+      .and([{department: {neq: 'student'}, tag: {inq: ['tag1']}}])
+      .build();
+    wb.clear();
+    const result = wb
+      .impose({dob: {lt: dob}})
+      .regexp('name', new RegExp('davis', 'i'))
+      .exists('photoUrl', true)
+      .build();
+    expect(result).to.eql(expected);
+  });
 });
