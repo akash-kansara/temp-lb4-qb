@@ -18,7 +18,7 @@
     "prepublish": "npm run build",
     "prettier": "prettier \"src/**/*.ts\" -c",
     "prettier:fix": "prettier \"src/**/*.ts\" -w",
-    "test": "nyc ts-mocha src/__tests__/**/*.test.ts"
+    "test": "nyc --reporter=html --reporter=text ts-mocha src/__tests__/**/*.test.ts"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,4 @@
-export function add(a: number, b: number) {
-  return a + b;
-}
+import {WhereBuilder} from './query';
+import {Where} from './types';
+
+export {WhereBuilder, Where};
