@@ -4,6 +4,6 @@ export interface User {
   department: 'student' | 'faculty';
   active: boolean;
   photoUrl?: string;
-  tags?: string[];
+  tag: string;
   friends: number;
 }

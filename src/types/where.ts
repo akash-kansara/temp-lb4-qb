@@ -2,6 +2,20 @@ import {Property} from './base';
 
 export type PropertyClause<T> = {
   eq?: T;
+  neq?: T;
+  gt?: T;
+  gte?: T;
+  lt?: T;
+  lte?: T;
+  inq?: T[];
+  nin?: T[];
+  between?: [T, T];
+  exists?: boolean;
+  like?: T;
+  nlike?: T;
+  ilike?: T;
+  nilike?: T;
+  regexp?: string | RegExp;
 };
 
 export type WhereClause<M extends object> = {

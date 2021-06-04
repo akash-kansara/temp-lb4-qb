@@ -16,4 +16,8 @@ export class WhereStore<M extends object> {
     }
     this.store = Object.assign(this.store, w);
   }
+
+  clear() {
+    this.store = {};
+  }
 }
